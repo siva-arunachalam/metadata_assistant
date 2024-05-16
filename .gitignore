@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+__pycache__
+.env*
+.idea/
+.pytest_cache/
+data/
+tabulate/
+test_ui/
+*.ipynb
+*.bkp

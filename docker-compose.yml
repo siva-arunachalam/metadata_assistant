@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    env_file:
+      - .env_db
+    volumes:
+      - ./data/postgres_db:/var/lib/postgresql/data
+      - .:/app
+    ports:
+      - "5432:5432"
+    working_dir: /app
+
+  meta_ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: meta_ui
+    env_file:
+      - .env
+      - .env_db
+    ports:
+      - "8505:8501"
+    volumes:
+      - .:/app  
+    depends_on:
+      - postgres
+    command: ["streamlit", "run", "/app/meta_ui.py"]
+
