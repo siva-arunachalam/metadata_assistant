@@ -28,7 +28,7 @@ def load_data() -> None:
 
     for file in os.listdir(data_folder):
         if file.endswith(".csv"):
-            table_name = os.path.splitext(file)[0].lower()
+            table_name = os.path.splitext(file)[0].lower().replace('-', '_')
             print(f"processing {table_name} ...")
 
             file_path = os.path.join(data_folder, file)
