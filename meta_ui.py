@@ -60,6 +60,8 @@ def display_generated_metadata() -> None:
     """
     if st.session_state.generated_metadata:
         md = st.session_state.generated_metadata
+        st.subheader("Dataset Description")
+        st.write(f"{md.description}")
         columns = [item.name for item in md.columns]
 
         selected_column = st.selectbox("Select a column", columns)
@@ -70,6 +72,8 @@ def display_generated_metadata() -> None:
             st.write(f"Definition: {meta.description}")
             st.write(f"Data Type: {meta.data_type}")
             st.write(f"Sensitivity: {meta.sensitivity}")
+            st.write(f"Tags: {meta.tags or 'n/a'}")
+            st.write(f"Analysis: {meta.analysis or 'n/a'}")
 
 
 def main() -> None:

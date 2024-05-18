@@ -40,7 +40,7 @@ def load_data() -> None:
                 conn.execute(text(f"DROP TABLE IF EXISTS {table_name}"))
                 conn.commit()
 
-            df.to_sql(table_name, engine, index=False)
+            df.head(10000).to_sql(table_name, engine, index=False)
 
             print(f"Loaded data into table: {table_name}")
             print()
