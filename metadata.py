@@ -23,7 +23,7 @@ class ColumnMetadata(BaseModel):
 
 
 class DatasetMetadata(BaseModel):
-    """Metadata containing descriptive information for the dataset and its columns. Make sure you include all the columns in the dataset"""
+    """Metadata containing descriptive information for the dataset and its columns."""
     name: str = Field(description="Name of the dataset. Default to the name of the table or dataset provided")
     description: str = Field(description="Generated description after analyzing the dataset as a whole across all columns and rows")
     columns: List[ColumnMetadata] = Field("List of column metadata. This list will have an item for each column in the dataset")

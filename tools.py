@@ -1,6 +1,6 @@
 import pandas as pd
 from langchain.tools import tool
-from typing import Optional
+from typing import Optional, List
 from database import get_sample_data as func_get_sample_data
 
 @tool

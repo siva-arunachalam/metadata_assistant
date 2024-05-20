@@ -2,7 +2,7 @@ import streamlit as st
 from typing import List
 from database import get_table_names, get_sample_data, get_column_names
 from llm import MetadataGenerator
-from config import model_dict
+from config import model_dict, color_map
 
 def render_sidebar() -> str:
     """
@@ -72,7 +72,11 @@ def display_generated_metadata() -> None:
             st.write(f"Definition: {meta.description}")
             st.write(f"Data Type: {meta.data_type}")
             st.write(f"Sensitivity: {meta.sensitivity}")
-            st.write(f"Tags: {meta.tags or 'n/a'}")
+            if meta.tags:
+                tags_html = " ".join([f'<span style="background-color: {color_map.get(tag, "#ABB8C3")}; color: white; padding: 2px 5px; border-radius: 5px; margin-right: 5px;">{tag}</span>' for tag in meta.tags])
+                st.markdown(f"Tags: {tags_html}", unsafe_allow_html=True)
+            else:
+                st.write("Tags: n/a")
             st.write(f"Analysis: {meta.analysis or 'n/a'}")
 
 
