@@ -1,0 +1,92 @@
+/* styles.css */
+body {
+    background-color: #f8f9fa;
+}
+
+.stButton button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.stButton button:hover {
+    background-color: #2980b9;
+}
+
+.header {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+.subheader {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px;
+    color: #777;
+}
+
+.sidebar .sidebar-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sidebar .sidebar-content h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sidebar .sidebar-content .stSelectbox, .sidebar .sidebar-content .stButton {
+    margin-bottom: 20px;
+}
+
+.sidebar .sidebar-content .stRadio {
+    margin-top: 10px;
+}
+
+.generate-metadata-section {
+    text-align: center;
+    margin-top: 0;
+}
+
+.metadata-section {
+    padding: 0;
+    margin-top: 20px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.metadata-content {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.metadata-content b {
+    font-weight: bold;
+}
+
+.tag {
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+}
